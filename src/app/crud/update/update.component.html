@@ -1,0 +1,52 @@
+<main class=" bg-secondary">
+
+    <section>
+
+        <div class="py-5 ">
+            <div class="container">
+
+                <h3 class="h4 text-success font-weight-bold mb-4">Update</h3>
+
+                <div class="mb-3">
+                    <small class="text-uppercase font-weight-bold"> Update post </small>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <form class="form-group" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+                            <input type="text" disabled="disabled"  placeholder="id" formControlName="id"
+                                class="form-control form-control-alternative" /> <br>
+
+                            <select placeholder="userId" formControlName="userId" 
+                                class="form-control form-control-alternative">
+                                <option *ngFor="let key of  [1,2,3,4,5,6,7,8,9,10]" [value]="key">{{key}}</option>
+                            </select> <br>
+
+                            <input type="text"placeholder="title" formControlName="title" 
+                                class="form-control form-control-alternative" /> <br>
+
+                            <textarea cols="auto" rows="5" placeholder="body" formControlName="body" 
+                                class="form-control form-control-alternative"></textarea> <br>
+
+                            <button class="btn btn-icon btn-3 btn-warning" type="submit"
+                                [disabled]="!profileForm.valid">
+                                <span class="btn-inner--icon"><i class="ni ni-active-40"></i></span>
+                                <span class="btn-inner--text"> Update </span>
+                            </button>
+
+                        </form>
+
+                        <div class="alert alert-default" role="alert">
+                            <p>Form Status: {{ profileForm.status }}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>

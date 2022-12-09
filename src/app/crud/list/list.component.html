@@ -1,0 +1,48 @@
+<main class=" bg-secondary">
+
+    <section>
+
+        <div class="py-5 ">
+            <div class="container">
+
+                <h3 class="h4 text-success font-weight-bold mb-4">Read</h3>
+
+                <div class="mb-3">
+                    <small class="text-uppercase font-weight-bold"> All posts </small>
+                </div>
+                <div class="row">
+
+                    <table style="width:100%">
+                        <tr>
+                            <th>id</th>
+                            <th>userId</th>
+                            <th>title</th>
+                            <th>Options</th>
+                        </tr>
+                        <tr *ngFor="let post of posts">
+                            <td> {{post.id}} </td>
+                            <td> {{post.userId}} </td>
+                            <td> {{post.title}} </td>
+                            <td>
+                                <button (click)="read(post.id)" class="btn btn-icon btn-3 btn-primary">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                </button>
+
+                                <button (click)="update(post.id)" class="btn btn-icon btn-3 btn-warning">
+                                    <span class="btn-inner--icon"><i class="ni ni-active-40"></i></span>
+                                </button>
+
+                                <button (click)="delete(post.id)" class="btn btn-icon btn-3 btn-danger">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
